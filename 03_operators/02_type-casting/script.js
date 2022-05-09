@@ -1,3 +1,4 @@
+/* eslint-disable */
 // code below must be finished ;)
 
 /* cast to string */

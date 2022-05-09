@@ -1,3 +1,4 @@
+/* eslint-disable */
 if (true) console.log("I'm in");
 
 if (false) {
