@@ -1,4 +1,4 @@
-const start = 1;
+const start = 10;
 const end = 100;
 
 let result = 0;
