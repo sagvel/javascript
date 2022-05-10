@@ -5,9 +5,9 @@ for (let i = 0; i <= 1000; i += 1) {
     sumOdd += i;
     console.log('Found');
   }
-  if (i % 2 === 1 && sumOdd * 5 > 5000) {
+  if (sumOdd * 5 > 5000) {
     console.log('Bigger');
-  } else if (i % 2 === 1 && sumOdd * 5 < 5000) {
+  } else {
     console.log('Smaller or equal');
   }
 }
