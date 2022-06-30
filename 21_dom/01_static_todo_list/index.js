@@ -1,8 +1,21 @@
+'use strict';
 
-function renderTasks(todos) {
+export const tasks = [
+  { text: 'Buy milk', done: false },
+  { text: 'Pick up Tom from airport', done: false },
+  { text: 'Visit party', done: false },
+  { text: 'Visit doctor', done: true },
+  { text: 'Buy meat', done: true },
+];
+
+/**
+ * @param {object[]} tasksList
+ * @return {undefined}
+ */
+const renderTasks = tasksList => {
   const rootElement = document.querySelector('.list');
 
-  const listItems = [...todos]
+  const listItems = [...tasksList]
     .sort((a, b) => a.done - b.done)
     .map(({ text, done }) => {
       let listItem = document.createElement('li');
@@ -20,4 +33,4 @@ function renderTasks(todos) {
     });
 
   rootElement.append(...listItems);
-}
+};
