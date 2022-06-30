@@ -34,3 +34,5 @@ const renderTasks = tasksList => {
 
   rootElement.append(...listItems);
 };
+
+renderTasks(tasks);

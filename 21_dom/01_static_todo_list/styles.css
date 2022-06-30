@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 
-html {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .title {
@@ -15,11 +15,53 @@ html {
 .todo-list {
   display: flex;
   flex-direction: column;
-  margin: 32px auto 0 auto;
+  margin-top: 32px;
+  background-color: coral;
+  border-radius: 8px;
   padding: 8px;
   max-width: 600px;
-  background-color: #ff7f50;
+  margin: auto;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin: auto;
+  width: 100%;
+}
+
+.list__item {
+  display: flex;
+  align-items: center;
+  height: 40px;
   border-radius: 8px;
+  background-color: wheat;
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+.list__item_done {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.list__item:last-child {
+  margin-bottom: 0;
+}
+
+.list__item-checkbox {
+  margin-right: 8px;
+}
+
+.btn {
+  height: 32px;
+  min-width: 64px;
+  border: 3px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: 16px;
 }
 
 .actions {
@@ -27,47 +69,9 @@ html {
   margin-bottom: 8px;
 }
 
-.new-todo {
-  flex: 1;
-  border: 3px solid #ccc;
-  outline: none;
-  border-radius: 8px;
-}
-
-.btn {
+.task-input {
   height: 32px;
-  min-width: 64px;
-  margin-left: 16px;
   border: 3px solid #ccc;
-  outline: none;
-  cursor: pointer;
   border-radius: 8px;
+  flex: 1;
 }
-
-.list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  width: 100%;
-}
-.list__item {
-  display: flex;
-  align-items: center;
-  height: 40px;
-  padding: 8px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  background-color: #f5deb3;
-}
-.list__item_done {
-  text-decoration: line-through;
-  opacity: 0.7;
-}
-.list__item:last-child {
-  margin-bottom: 0;
-}
-.list__item-checkbox {
-  margin-right: 8px;
-}
-
-/*# sourceMappingURL=styles.css.map */
