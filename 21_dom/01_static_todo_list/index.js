@@ -28,5 +28,3 @@ function renderTasks(todos) {
 
     rootElement.append(...listItems);
 }
-
-renderTasks(tasks);
