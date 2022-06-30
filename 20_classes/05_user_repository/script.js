@@ -20,9 +20,8 @@ class User {
   }
 }
 
-class UserRepository extends User {
+class UserRepository {
   constructor(users) {
-    super();
     this._users = users;
     Object.freeze(this._users);
   }
