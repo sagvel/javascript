@@ -1,7 +1,7 @@
 // input: undefined
 // output: undefined
 
-const clearList = () => {
+export const clearList = () => {
   document.querySelector('.categories').innerHTML = '';
 };
 
