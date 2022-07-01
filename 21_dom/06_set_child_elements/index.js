@@ -2,7 +2,7 @@
 // output: undefined
 
 export const setButton = string => {
-  document.querySelector('body').innerHTML = string;
+  document.querySelector('body').innerHTML = `<button>${string}</button>`;
   // document.querySelector('body').textContent = string;
 };
 
