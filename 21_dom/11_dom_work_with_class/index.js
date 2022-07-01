@@ -17,4 +17,4 @@ export const manageClasses = () => {
 };
 
 // test data
-manageClasses();
+// manageClasses();
