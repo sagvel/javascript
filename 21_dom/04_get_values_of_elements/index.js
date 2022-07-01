@@ -5,7 +5,7 @@ export const getGoals = () => document.querySelector('.goal').outerHTML;
 
 // test data
 
-console.log(getTitle());
-console.log(getDescription());
-console.log(getPlans());
-console.log(getGoals());
+// console.log(getTitle());
+// console.log(getDescription());
+// console.log(getPlans());
+// console.log(getGoals());

@@ -7,6 +7,6 @@ export const setTitle = text => {
 
 // test data
 
-console.log(document.querySelector('.title').textContent);
-setTitle('Hello! This is test call');
-console.log(document.querySelector('.title').textContent);
+// console.log(document.querySelector('.title').textContent);
+// setTitle('Hello! This is test call');
+// console.log(document.querySelector('.title').textContent);
