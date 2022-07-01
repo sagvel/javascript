@@ -4,4 +4,4 @@ const checkHandler = () => {
   console.log(checkElem.checked);
 };
 
-checkElem.addEventListener('click', checkHandler);
+checkElem.addEventListener('change', checkHandler);
