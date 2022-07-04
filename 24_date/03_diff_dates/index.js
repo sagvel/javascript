@@ -1,27 +1,21 @@
 // input: Date, Date
 // output: string
+// refactor after menthor review
+const SECOND = 1000;
+const MINUTE = SECOND * 60;
+const HOUR = MINUTE * 60;
+const DAY = HOUR * 24;
 
-export function getDiff(startDate, endDate) {
-  const diffOfDates = Math.abs(startDate.getTime() - endDate.getTime());
-  const oneDay = 1000 * 60 * 60 * 24;
-  const oneHour = 1000 * 60 * 60;
-  const oneMin = 1000 * 60;
-  const oneSec = 1000;
-  const diffDays = Math.trunc(diffOfDates / oneDay);
-  const diffHours = Math.trunc((diffOfDates - oneDay * diffDays) / oneHour);
-  const diffMins = Math.trunc((diffOfDates - oneDay * diffDays - diffHours * oneHour) / oneMin);
-  const diffSeconds = Math.round(
-    (diffOfDates - oneDay * diffDays - diffHours * oneHour - diffMins * oneMin) / oneSec,
-  );
-  // test data inside function
-  // console.log(diffOfDates);
-  // console.log(diffDays);
-  // console.log(diffHours);
-  // console.log(diffMins);
-  // console.log(diffSeconds);
-  // console.log(`${diffDays}d ${diffHours}h ${diffMins}m ${diffSeconds}s`);
-  return `${diffDays}d ${diffHours}h ${diffMins}m ${diffSeconds}s`;
-}
+export const getDiff = (startDate, finishDate) => {
+  const difference = Math.abs(finishDate - startDate);
+
+  const daysLeft = Math.floor(difference / DAY);
+  const hoursLeft = Math.floor((difference % DAY) / HOUR);
+  const minutesLeft = Math.floor((difference % HOUR) / MINUTE);
+  const secondsLeft = Math.floor((difference % MINUTE) / SECOND);
+
+  return `${daysLeft}d ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`;
+};
 
 // test data
 getDiff(new Date(), new Date(2022, 5, 25));
