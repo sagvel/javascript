@@ -1,5 +1,5 @@
 // input: Date object, number
-// output: undefined
+// output: string
 
 export function dayOfWeek(date, days) {
   const weekDay = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'St'];
