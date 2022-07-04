@@ -7,7 +7,7 @@ const formatter = new Intl.DateTimeFormat('en', {
 
 // input: date object
 // output: string
-function getGreenwichTime(date) {
+export function getGreenwichTime(date) {
   return formatter.format(date);
 }
 
