@@ -13,8 +13,7 @@ const btnElem = document.querySelector('.create-task-btn');
 // input: nothing
 // output: undefined
 function delPrevTodos() {
-  const listItems = document.querySelectorAll('.list__item');
-  listItems.forEach(item => item.remove());
+  listElem.innerHTML = '';
 }
 
 // render function
@@ -38,7 +37,7 @@ const renderTasks = tasksList => {
 
       return listItemElem;
     });
-
+  delPrevTodos();
   listElem.append(...tasksElems);
 };
 
@@ -46,29 +45,21 @@ renderTasks(tasks);
 
 // input: event object
 // output: undefined
-const checkboxHandler = event => {
-  const doneTodos = tasks.map(todo => {
-    if (todo.id === event.target.dataset.id) {
-      // eslint-disable-next-line no-param-reassign
-      todo.done = !todo.done;
-    }
 
-    return todo;
-  });
+const onToggleTask = event => {
+  const isCheckbox = event.target.classList.contains('list__item-checkbox');
+  if (!isCheckbox) {
+    return;
+  }
 
-  delPrevTodos();
-  renderTasks(doneTodos);
-};
-
-// input: event object
-// output: undefined
-const inputHandler = event => {
-  const inputValue = event.target.value;
+  const taskData = tasks.find(task => task.id === event.target.dataset.id);
+  Object.assign(taskData, { done: event.target.checked });
+  renderTasks(tasks);
 };
 
 // input: nothing
 // output: undefined
-const creatNewTodo = () => {
+const createNewTodo = () => {
   if (inputElem.value.trim().length === 0) {
     return;
   }
@@ -80,10 +71,8 @@ const creatNewTodo = () => {
   });
 
   inputElem.value = '';
-  delPrevTodos();
   renderTasks(tasks);
 };
 
-listElem.addEventListener('click', checkboxHandler);
-inputElem.addEventListener('change', inputHandler);
-btnElem.addEventListener('click', creatNewTodo);
+listElem.addEventListener('click', onToggleTask);
+btnElem.addEventListener('click', createNewTodo);
