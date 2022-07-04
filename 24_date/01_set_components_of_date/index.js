@@ -6,7 +6,7 @@ export function dayOfWeek(date, days) {
   const day = new Date(date).getDate();
   const dateInFuture = new Date(date).setDate(day + days);
 
-  console.log(weekDay[new Date(dateInFuture).getDay()]);
+  return weekDay[new Date(dateInFuture).getDay()];
 }
 
 // test data
