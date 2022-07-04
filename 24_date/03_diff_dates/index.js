@@ -2,7 +2,7 @@
 // output: string
 
 export function getDiff(startDate, endDate) {
-  const diffOfDates = startDate.getTime() - endDate.getTime();
+  const diffOfDates = Math.abs(startDate.getTime() - endDate.getTime());
   const oneDay = 1000 * 60 * 60 * 24;
   const oneHour = 1000 * 60 * 60;
   const oneMin = 1000 * 60;
@@ -24,4 +24,5 @@ export function getDiff(startDate, endDate) {
 }
 
 // test data
-// getDiff(new Date(), new Date(2022, 5, 25));
+getDiff(new Date(), new Date(2022, 5, 25));
+getDiff(new Date(2022, 5, 25), new Date());
