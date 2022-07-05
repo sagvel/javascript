@@ -21,6 +21,7 @@ export const shmoment = initialDate => {
 
   const operations = {
     add(type, value) {
+      // todo refactor methods 'add' and 'subtract' whith using 'setDates' object
       // console.log(setDates[type]);
       // date.setDates[type](getDates[type] + value);
       switch (type) {
