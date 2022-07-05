@@ -2,21 +2,31 @@
 // output: object
 export const shmoment = initialDate => {
   const date = initialDate;
-  const getDatas = {
+  const getDates = {
     years: date.getFullYear(),
     months: date.getMonth(),
   };
 
-  const setDatas = {
-    years: date.setFullYear,
+  const setDates = {
+    years: 'setFullYear',
     months: date.setMonth,
   };
 
   const operations = {
     add(type, value) {
-      if (type === 'years') {
-        date.setFullYear(getDatas[type] + value);
-      }
+      console.log(setDates[type]);
+      date.setDates[type](getDates[type] + value);
+      // switch (type) {
+      //   case 'years':
+      //     date.setDates[type](getDates[type] + value);
+      //     break;
+      //   case 'months':
+      //     date.setMonth(getDates[type] + value);
+      //     break;
+      //   default:
+      //     break;
+      // }
+
       return this;
     },
     result() {
