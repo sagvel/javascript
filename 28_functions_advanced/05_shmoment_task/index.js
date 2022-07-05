@@ -1,13 +1,16 @@
 // input: Date
 // output: object
+
 export const shmoment = initialDate => {
-  const date = initialDate;
+  const date = new Date(initialDate);
+  console.log(date);
   const getDates = {
     years: date.getFullYear(),
     months: date.getMonth(),
     days: date.getDate(),
     hours: date.getHours(),
     minutes: date.getMinutes(),
+    seconds: date.getSeconds(),
     milliseconds: date.getMilliseconds(),
   };
 
@@ -81,7 +84,7 @@ export const shmoment = initialDate => {
       return date;
     },
   };
-
+  console.log(initialDate);
   return operations;
 };
 
