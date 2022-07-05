@@ -10,7 +10,7 @@ export const toggleStatusTodo = event => {
     return;
   }
 
-  const todoList = getItem('todoList');
+  const todoList = getItem('tasksList');
 
   const newTodoList = todoList.map(todo => {
     if (todo.id === event.target.dataset.id) {
@@ -24,7 +24,7 @@ export const toggleStatusTodo = event => {
     return todo;
   });
 
-  setItem('todoList', newTodoList);
+  setItem('tasksList', newTodoList);
 
   renderTodos();
 };

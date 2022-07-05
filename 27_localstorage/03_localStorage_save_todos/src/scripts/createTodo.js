@@ -14,7 +14,7 @@ export const createTodo = () => {
 
   inputElem.value = '';
 
-  const todoList = getItem('todoList') || [];
+  const todoList = getItem('tasksList') || [];
 
   const newTodoList = todoList.concat({
     text: todoText,
@@ -23,7 +23,7 @@ export const createTodo = () => {
     id: Math.random().toString(),
   });
 
-  setItem('todoList', newTodoList);
+  setItem('tasksList', newTodoList);
 
   renderTodos();
 };

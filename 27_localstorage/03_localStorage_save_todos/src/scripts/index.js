@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // input: event object
 // output: undefined
 const storageHandler = event => {
-  if (event.key !== 'todoList') {
+  if (event.key !== 'tasksList') {
     return;
   }
 

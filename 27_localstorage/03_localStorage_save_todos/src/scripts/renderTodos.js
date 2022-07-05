@@ -12,7 +12,7 @@ function delPrevTodos() {
 // input: array
 // output: undefined
 export const renderTodos = () => {
-  const tasksList = getItem('todoList') || [];
+  const tasksList = getItem('tasksList') || [];
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
     .map(({ id, text, done }) => {
