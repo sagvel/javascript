@@ -27,5 +27,5 @@ export const shmoment = initialDate => {
   return operations;
 };
 
-// shmoment(new Date(2020, 0, 7, 17, 18, 19)).result();
+// test data
 console.log(shmoment(new Date(2020, 0, 7, 17, 18, 19, 20)).add('years', 1).result());
