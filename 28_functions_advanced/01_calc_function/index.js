@@ -1,6 +1,6 @@
 // input: number
 // output: object
-function calc(initialValue) {
+export function calc(initialValue) {
   let value = initialValue;
 
   const calculator = {
