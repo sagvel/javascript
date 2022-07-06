@@ -28,13 +28,13 @@ export const addImage = imgSrc => {
 };
 
 // examples
-// const loadImg = addImage(
-//   'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
-// );
+const loadImg = addImage(
+  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
+);
 
 const renderParams = data => {
   const spanElem = document.querySelector('.image-size');
   spanElem.textContent = `${data.width} x ${data.height}`;
 };
 
-// loadImg.then(renderParams).catch(e => console.log(e));
+loadImg.then(renderParams);
