@@ -25,7 +25,7 @@ export const addImage = (imgSrc, callback) => {
 // callack function
 // input: error || null, DOM element || nothing
 // output: undefined
-const onImageLoaded = (error, imgElem) => {
+const callback = (error, imgElem) => {
   if (error) {
     console.log(error);
     return;
