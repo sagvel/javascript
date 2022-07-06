@@ -3,7 +3,6 @@
 
 export const shmoment = initialDate => {
   const date = new Date(initialDate);
-  console.log(date);
   const getDates = {
     years: date.getFullYear(),
     months: date.getMonth(),
@@ -14,71 +13,23 @@ export const shmoment = initialDate => {
     milliseconds: date.getMilliseconds(),
   };
 
-  // const setDates = {
-  //   years: 'setFullYear',
-  //   months: date.setMonth,
-  // };
+  const setNamesMethods = {
+    years: 'setFullYear',
+    months: 'setMonth',
+    days: 'setDate',
+    hours: 'setHours',
+    minutes: 'setMinutes',
+    seconds: 'setSeconds',
+    milliseconds: 'setMilliseconds',
+  };
 
   const operations = {
     add(type, value) {
-      // todo refactor methods 'add' and 'subtract' whith using 'setDates' object
-      // console.log(setDates[type]);
-      // date.setDates[type](getDates[type] + value);
-      switch (type) {
-        case 'years':
-          date.setFullYear(getDates[type] + value);
-          break;
-        case 'months':
-          date.setMonth(getDates[type] + value);
-          break;
-        case 'days':
-          date.setDate(getDates[type] + value);
-          break;
-        case 'hours':
-          date.setHours(getDates[type] + value);
-          break;
-        case 'minutes':
-          date.setMinutes(getDates[type] + value);
-          break;
-        case 'seconds':
-          date.setSeconds(getDates[type] + value);
-          break;
-        case 'milliseconds':
-          date.setMilliseconds(getDates[type] + value);
-          break;
-        default:
-          break;
-      }
-
+      date[setNamesMethods[type]](getDates[type] + value);
       return this;
     },
     subtract(type, value) {
-      switch (type) {
-        case 'years':
-          date.setFullYear(getDates[type] - value);
-          break;
-        case 'months':
-          date.setMonth(getDates[type] - value);
-          break;
-        case 'days':
-          date.setDate(getDates[type] - value);
-          break;
-        case 'hours':
-          date.setHours(getDates[type] - value);
-          break;
-        case 'minutes':
-          date.setMinutes(getDates[type] - value);
-          break;
-        case 'seconds':
-          date.setSeconds(getDates[type] - value);
-          break;
-        case 'milliseconds':
-          date.setMilliseconds(getDates[type] - value);
-          break;
-        default:
-          break;
-      }
-
+      date[setNamesMethods[type]](getDates[type] - value);
       return this;
     },
     result() {
@@ -92,7 +43,8 @@ export const shmoment = initialDate => {
 // test data
 console.log(
   shmoment(new Date(2020, 0, 7, 17, 18, 19, 20))
-    .add('years', 1)
+    .add('years', 2)
+    .add('days', 33)
     .add('hours', 3)
     .subtract('minutes', 78)
     .result(),
