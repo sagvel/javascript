@@ -18,7 +18,7 @@ export const addImage = imgSrc => {
     imgElem.addEventListener('load', imgLoadHandler);
 
     const errorHandler = () => {
-      reject(new Error('Image load is failed'));
+      reject(new Error('Image load is failed...'));
     };
 
     imgElem.addEventListener('error', errorHandler);
@@ -28,13 +28,13 @@ export const addImage = imgSrc => {
 };
 
 // examples
-const loadImg = addImage(
-  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
-);
-const spanElem = document.querySelector('.image-size');
+// const loadImg = addImage(
+//   'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
+// );
 
-loadImg
-  .then(data => {
-    spanElem.textContent = `${data.width} x ${data.height}`;
-  })
-  .catch(e => console.log(e));
+const renderParams = data => {
+  const spanElem = document.querySelector('.image-size');
+  spanElem.textContent = `${data.width} x ${data.height}`;
+};
+
+// loadImg.then(renderParams).catch(e => console.log(e));
