@@ -9,8 +9,8 @@ export const addImage = (imgSrc, callback) => {
   rootElem.append(imgElem);
 
   const imgLoadHandler = () => {
-    const { width, height } = imgElem;
-    callback(null, { width, height });
+    // const { width, height } = imgElem;
+    callback(null, imgElem);
   };
 
   imgElem.addEventListener('load', imgLoadHandler);
@@ -25,7 +25,7 @@ export const addImage = (imgSrc, callback) => {
 // callack function
 // input: error || null, DOM element || nothing
 // output: undefined
-const callback = (error, imgElem) => {
+const onImageLoaded = (error, imgElem) => {
   if (error) {
     console.log(error);
     return;
