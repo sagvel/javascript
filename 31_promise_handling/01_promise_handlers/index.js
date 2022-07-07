@@ -25,7 +25,7 @@ export const requestUserData = userId => {
       }, 500);
     }
   });
-
+  console.log(promise);
   return promise;
 };
 
