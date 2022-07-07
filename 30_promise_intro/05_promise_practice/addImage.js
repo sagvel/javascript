@@ -1,4 +1,4 @@
-import { addImageV2 } from './index.js';
+// import { addImageV2 } from './index.js';
 
 // const addImage = (url, callback) => {
 //   const img = document.createElement('img');
