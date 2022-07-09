@@ -1,14 +1,14 @@
-// input: number
+// input: numbers
+// output: number
+
+const getSum = numbers =>
+  numbers.filter(number => !isNaN(number)).reduce((acc, val) => acc + Number(val), 0);
+
+// input: promises
 // output: promise
-export const delay = num => {
-  const promise = new Promise(resolve => {
-    setTimeout(() => {
-      resolve();
-    }, num);
-  });
 
-  return promise;
+export const asyncSum = (...numberPromise) => {
+  return Promise.all(numberPromise)
+    .then(numbers => getSum(numbers))
+    .catch(() => Promise.reject(new Error("Can't calculate")));
 };
-
-// test data
-// delay(3000).then(() => console.log('Done'));
