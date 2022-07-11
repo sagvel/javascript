@@ -5,6 +5,8 @@ const submitBtn = document.querySelector('.submit-button');
 const formElem = document.querySelector('.login-form');
 const BASE_URL = 'https://62cbcd06a0800529309ee109.mockapi.io/api/v1/users';
 
+// todo refactor code!!!
+
 const sendForm = formData => {
   return fetch(BASE_URL, {
     method: 'POST',
@@ -31,13 +33,16 @@ const formHandler = event => {
       [prop]: value,
     };
   }, {});
+
   sendForm(formData)
-    .then(() => getForm())
+    .then(() => {
+      emailElem.value = '';
+      nameElem.value = '';
+      passElem.value = '';
+      return getForm();
+    })
     .then(data => alert(JSON.stringify(data)));
 
-  emailElem.value = '';
-  nameElem.value = '';
-  passElem.value = '';
   submitBtn.disabled = true;
 };
 
