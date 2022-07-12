@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.github.com/users/';
+const BASE_URL = 'https://api.github.com/user/';
 
 export const requestFunc = userUrl => {
   return fetch(`${BASE_URL}${userUrl}`).then(response => {
