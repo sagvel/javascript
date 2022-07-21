@@ -10,8 +10,7 @@ export const getUsersBlogs = async users => {
       users.map(user => fetch(`${BASE_URL}/${user}`).then(response => response.json())),
     );
 
-    const result = responses.map(user => user.blog);
-    return result;
+    return responses.map(user => user.blog);
   } catch (error) {
     throw new Error("Can't load data");
   }
