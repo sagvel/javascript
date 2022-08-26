@@ -14,8 +14,8 @@ const timer = {
 
   stopTimer() {
     clearInterval(this.intervalID);
-  }
-}
+  },
+};
 
 // timer.startTimer()
 // timer.stopTimer()
