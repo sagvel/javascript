@@ -46,7 +46,7 @@ renderTasks(tasks);
 // input: event object
 // output: undefined
 
-const onToggleTask = event => {
+const toggleTodoHandler = event => {
   const isCheckbox = event.target.classList.contains('list__item-checkbox');
   if (!isCheckbox) {
     return;
@@ -54,12 +54,13 @@ const onToggleTask = event => {
 
   const taskData = tasks.find(task => task.id === event.target.dataset.id);
   Object.assign(taskData, { done: event.target.checked });
+
   renderTasks(tasks);
 };
 
 // input: nothing
 // output: undefined
-const createNewTodo = () => {
+const createTodoHandler = () => {
   if (inputElem.value.trim().length === 0) {
     return;
   }
@@ -74,5 +75,5 @@ const createNewTodo = () => {
   renderTasks(tasks);
 };
 
-listElem.addEventListener('click', onToggleTask);
-btnElem.addEventListener('click', createNewTodo);
+listElem.addEventListener('click', toggleTodoHandler);
+btnElem.addEventListener('click', createTodoHandler);
